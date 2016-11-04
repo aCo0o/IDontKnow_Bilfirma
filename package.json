@@ -1,0 +1,9 @@
+{
+  "name": "idontknow_bilfirma",
+  "version": "1.0.0",
+  "description": "SUW 15 -IDontKnow- Grupparbete",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
