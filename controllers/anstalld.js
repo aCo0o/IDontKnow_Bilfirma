@@ -4,9 +4,10 @@ var anstallda = [
 {"namn": "Sumeja Cerkezi", "semester": "2016/07/15-2016/08/2", "bil": ""},
 {"namn": "Hamza Mahmoud", "semester": "2016/04/28-2016/05/15", "bil": ""},
 {"namn": "Marko Bijelic", "semester": "2016/09/3-2016/09/21", "bil": ""},
-{"namn": "Anders Månsson", "semester": "2016/12/18-2016/12/31", "bil": ""},
+{"namn": "Anders Månsson", "semester": "2016/12/18-2016/12/31", "bil": ""}
 ];
 
-exports.visaanstalld = function(req,res){
+exports.visaanstallda = function(req,res){
+      //console.log(anstallda)
       res.send(anstallda);
     };

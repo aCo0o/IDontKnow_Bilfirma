@@ -7,6 +7,18 @@ var skador = [
 		{"status": "Mini Cooper", "beskr": "FAT 368", "arbetsTim": "Linus Hermansson", "harArbetat": "","bil": "","anstalld": "",},
 	];
 
+	//get
 	exports.visaskador = function(req,res){
       res.send(skador);
     };
+
+    //post
+    
+
+
+    //delet
+
+
+
+
+    //put

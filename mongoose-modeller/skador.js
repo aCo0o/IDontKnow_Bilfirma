@@ -10,4 +10,4 @@ var skadorSchema = new Schema({
 		Anstalld : String
 	});
 
-module.exports = mongoose.model('Skada', skadorSchema);
+module.exports = mongoose.Schema('Skada', skadorSchema);
