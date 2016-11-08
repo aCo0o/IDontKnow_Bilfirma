@@ -1,10 +1,11 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+  Schema = mongoose.Schema;
 
-var bilModel = mongoose.bilModel({
-		model : {type: String, require: true},
-		regnum : {type: String, require: true},
-		kund : [{type: mongoos.Model.Types.ObjectId, ref: 'Kund'}]
+var BilSchema = new Schema({
+		model : String,
+		regnum : String,
+		kund : String
 	});
 
-var Bil = mongoose.model('Bil', bilModel);
-module.exports = Bil;
+module.exports = mongoose.model('Bil', BilSchema);
+

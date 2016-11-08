@@ -1,10 +1,10 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+  Schema = mongoose.Schema;
 
-var anstalldModel = mongoose.Model({
-		namn : {type: String, require: true},
-		semester : {type: String, require: false},
-		bil : [{type: mongoos.Model.Types.ObjectId, ref: 'Bil'}]
+var anstalldSchema = new Schema({
+		namn : String,
+		semester : String,
+		bil : String
 	});
 
-var Anstalld = mongoose.model('Anstalld', anstalldModel);
-module.exports = Anstalld;
+module.exports = mongoose.model('Anstalld', anstalldSchema);
