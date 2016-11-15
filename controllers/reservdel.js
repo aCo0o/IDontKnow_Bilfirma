@@ -1,10 +1,10 @@
 var reservdelar = [
-	    {"namn": "handbromsbackar", "pris": "450,00", "bil": "Mercedes-Benz C111"},
-		{"namn": "styrstag", "pris": "200,00", "bil": "Audi A7"},
-		{"namn": "oljefilter", "pris": "250,00", "bil": "Peugeot 307"},
-		{"namn": "kupefliter", "pris": "350,00", "bil": "KIA Picanto"},
-		{"namn": "fjädrar", "pris": "500,00", "bil": "BMW Z8"},
-		{"namn": "tändstift", "pris": "300,00", "bil": "Mini Cooper"},
+	    {"id": 0, "namn": "handbromsbackar", "pris": "450,00", "bil": "Mercedes-Benz C111"},
+		{"id": 1, "namn": "styrstag", "pris": "200,00", "bil": "Audi A7"},
+		{"id": 2, "namn": "oljefilter", "pris": "250,00", "bil": "Peugeot 307"},
+		{"id": 3, "namn": "kupefliter", "pris": "350,00", "bil": "KIA Picanto"},
+		{"id": 4, "namn": "fjädrar", "pris": "500,00", "bil": "BMW Z8"},
+		{"id": 5, "namn": "tändstift", "pris": "300,00", "bil": "Mini Cooper"},
 	];
 
 	//get
@@ -12,7 +12,7 @@ var reservdelar = [
       res.send(reservdelar);
     };
 
-   /* // GET By ID //
+   // GET By ID //
    exports.hittareservdelmedID = function(req, res){
    res.send(reservdelar[req.params.id]);
     };
@@ -31,23 +31,21 @@ var reservdelar = [
     exports.laggtillreservdel = function(req, res) {
        reservdelar.push({
             id: req.body.id,
-            status: req.body.status,
-            beskr:  req.body.beskr,
+            namn: req.body.namn,
+            pris:  req.body.pris,
             arbetsTim: req.body.arbetsTim,
-            harArbetat: req.body.harArbetat,
             bil: req.body.bil,
-            anstalld: req.body.anstalld,
 
       })
-      res.json({meddelande: "Det har nu lagts till en skada"})
-      res.send('/skador');
+      res.json({meddelande: "Det har nu lagts till en reservdel"})
+      res.send('/reservdelar');
     }
 
 
     // DELETE // 
-    exports.tabortskada = function(req, res) {
+    exports.tabortreservdel = function(req, res) {
       var id = parseInt(req.params.id)-1;
-      var bortaskadan = skador.splice(id,1);
-      res.json({meddelande: "sakadan är nu borta"});
-      res.send('/skador');
-    }; */
+      var bortasreserevdelen = reservdelar.splice(id,1);
+      res.json({meddelande: "reservdelen är nu borta"});
+      res.send('/reservdelar');
+    }; 

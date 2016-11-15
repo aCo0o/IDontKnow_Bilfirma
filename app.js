@@ -39,6 +39,10 @@ app.delete('/skador/:id', skada.tabortskada);
 
 // resevdel
 app.get('/reservdelar', reservdel.visareservdelar);
+app.get('/reservdelar/:id', reservdel.hittareservdelmedID);
+app.put('/reservdelar/:id', reservdel.uppdaterareservdel);
+app.post('/reservdelar', reservdel.laggtillreservdel);
+app.delete('/reservdelar/:id', reservdel.tabortreservdel);
 
 app.listen(port, function() {
 console.log("Server startad på port : " + port);
