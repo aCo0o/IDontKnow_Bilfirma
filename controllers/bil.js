@@ -11,7 +11,7 @@ var bilar = [
       res.send(bilar);
     };
 
-   /*// GET By ID //
+   // GET By ID //
    exports.hittabilmedID = function(req, res){
    res.send(bilar[req.params.id]);
     };
@@ -46,4 +46,4 @@ var bilar = [
       var bortabilen = bilar.splice(id,1);
       res.json({meddelande: "Bilen är nu borta"});
       res.send('/bilar');
-    };*/
+    };
