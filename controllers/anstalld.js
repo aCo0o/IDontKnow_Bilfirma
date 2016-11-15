@@ -1,5 +1,5 @@
 var anstallda = [
-   {"namn": "Aleksandar Cincarevic", "semester": "2016/05/28-2016/06/21", "bil": ""},
+ {"namn": "Aleksandar Cincarevic", "semester": "2016/05/28-2016/06/21", "bil": ""},
 {"namn": "Sara Baqer", "semester": "2016/06/10-2016/06/21", "bil": ""},
 {"namn": "Sumeja Cerkezi", "semester": "2016/07/15-2016/08/2", "bil": ""},
 {"namn": "Hamza Mahmoud", "semester": "2016/04/28-2016/05/15", "bil": ""},

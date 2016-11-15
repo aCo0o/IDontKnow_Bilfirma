@@ -6,8 +6,8 @@ var skadorSchema = new Schema({
 		beskr : String,
 		arbetsTim : String,
 		harArbetat : Array,
-		Bil : String,
-		Anstalld : String
+		bil : String,
+		anstalld : String
 	});
 
 module.exports = mongoose.Schema('Skada', skadorSchema);
