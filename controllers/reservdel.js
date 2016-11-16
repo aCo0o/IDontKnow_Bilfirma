@@ -1,5 +1,5 @@
 var reservdelar = [
-	    {"id": 0, "namn": "handbromsbackar", "pris": "450,00", "bil": "Mercedes-Benz C111"},
+	  {"id": 0, "namn": "handbromsbackar", "pris": "450,00", "bil": "Mercedes-Benz C111"},
 		{"id": 1, "namn": "styrstag", "pris": "200,00", "bil": "Audi A7"},
 		{"id": 2, "namn": "oljefilter", "pris": "250,00", "bil": "Peugeot 307"},
 		{"id": 3, "namn": "kupefliter", "pris": "350,00", "bil": "KIA Picanto"},

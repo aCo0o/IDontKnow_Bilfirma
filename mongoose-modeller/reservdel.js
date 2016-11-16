@@ -1,14 +1,9 @@
-var mongoose = require('mongoose'),
-  Schema = mongoose.Schema;
+var mongoose = require('mongoose');
 
-var reservdelSchema = new Schema({
-		namn : String,
-		pris : String,
-		bil : String
-	});
+var reservdelSchema = new mongoose.Schema({
+    namn : {type: String, required: true},
+    pris : {type: Number, required: true},
+    bil : [{type: mongoose.Schema.Types.ObjectId, ref:'bil'}]
+  });
 
 module.exports = mongoose.Schema('Reservdel', reservdelSchema);
-
-
-
-

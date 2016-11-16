@@ -1,11 +1,9 @@
 var mongoose = require('mongoose'),
-  Schema = mongoose.Schema;
 
-var kundSchema = new Schema({
-		name : String,
-		persnum : Number,
-		address : String,
-		bil:   String
-	});
+var kundSchema = new mongoose.Schema({
+    name : {type: String, required: true},
+    tfn : {type: String, required: true},
+    bil:  {type: mongoose.Schema.Types.ObjectId, ref:'bil'}
+  });
 
-module.exports = mongoose.model('Kund', kundSchema);
+module.exports = mongoose.model('kunder', kundSchema);

@@ -1,10 +1,8 @@
-var mongoose = require('mongoose'),
-  Schema = mongoose.Schema;
+var mongoose = require('mongoose')
 
-var anstalldSchema = new Schema({
-		namn : String,
-		semester : String,
-		bil : String
-	});
+var anstalldSchema = new mongoose.Schema({
+    namn : {type: String, required: true},
+    semester : {type: mongoose.Schema.Types.ObjectId, ref:'semester'}
+  });
 
-module.exports = mongoose.model('Anstalld', anstalldSchema);
+module.exports = mongoose.model('anstallda', anstalldSchema);

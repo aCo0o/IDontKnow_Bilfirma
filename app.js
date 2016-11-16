@@ -1,17 +1,11 @@
-var express = require('express');
-var app = express();
-var log = console.log;
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var bil = require('./controllers/bil.js');
-var kund = require('./controllers/kund.js');
-var anstalld = require('./controllers/anstalld.js');
-var reservdel = require ('./controllers/reservdel.js');
-var skada = require('./controllers/skada.js');
-var port = 3000;
+var express 	= require('express');
+var bodyParser 	= require('body-parser');
+var iAm 		= require('./allaRoutes');
+var app 		= express();
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
 
 app.get('/', function (req, res) {
     res.send('Hej Gruppen!!!!!!');
@@ -53,6 +47,13 @@ app.put('/reservdelar/:id', reservdel.uppdaterareservdel);
 app.post('/reservdelar', reservdel.laggtillreservdel);
 app.delete('/reservdelar/:id', reservdel.tabortreservdel);
 
+// Hela appen fångas upp här!
+// API hantering & Routes kodas här... allaRoutes.js
+iAm.WatchingYou(app);
+
+
+
+var port = 3000;
 app.listen(port, function() {
-console.log("Server startad på port : " + port);
+	console.log("Server startad på port : " + port);
 });

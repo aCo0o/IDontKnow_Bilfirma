@@ -1,13 +1,10 @@
 var mongoose = require('mongoose'),
-  Schema = mongoose.Schema;
 
-var skadorSchema = new Schema({
-		status : String,
-		beskr : String,
-		arbetsTim : String,
-		harArbetat : Array,
-		bil : String,
-		anstalld : String
-	});
+var skadorSchema = new mongoose.Schema({
+    status : {type: String, required: true},
+    beskr : {type: String, required: true},
+    arbetsTim : {type: Number, required: true},
+    harArbetat : [{type: mongoose.Schema.Types.ObjectId, ref:'anstallda'}]
+  });
 
-module.exports = mongoose.Schema('Skada', skadorSchema);
+module.exports = mongoose.Schema('skador', skadorSchema);
