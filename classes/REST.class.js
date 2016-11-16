@@ -1,6 +1,4 @@
 'use strict';
-var dummyGen = require("../dummyGen.js");
-var populator = require("../populator.js")
 
 module.exports = class REST {
   constructor(express) {

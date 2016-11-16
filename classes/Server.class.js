@@ -1,6 +1,5 @@
 'use strict';
 
-
 module.exports = class Server {
 
 	constructor(){
@@ -31,7 +30,7 @@ module.exports = class Server {
 		this.app.use(m.bodyparser.urlencoded({extended: false}));
 
 		this.app.use(m.expresssession({
-			secret: 'Hublot',
+			secret: 'wstd',
 			resave: false,
 			saveUninitialized: true
 		}));

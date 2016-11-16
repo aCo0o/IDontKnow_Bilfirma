@@ -1,4 +1,4 @@
-var mongoose = require('mongoose'),
+var mongoose = require('mongoose')
 
 var semesterSchema = new mongoose.Schema({
     fran : {type: Date, required: true},
@@ -6,4 +6,4 @@ var semesterSchema = new mongoose.Schema({
 
   });
 
-module.exports = mongoose.Schema('semester', semesterSchema);
+module.exports = mongoose.model('semester', semesterSchema);
