@@ -15,6 +15,6 @@ Aleksandar Cincarevic - Anställda
 
 ## Alla Routes går nu igenom 
 ```javascript 
-alla.Routes(app); - allaRoutes.js
+iAm.WatchingYou(app); - allaRoutes.js
 
 ```
