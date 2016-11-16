@@ -23,6 +23,7 @@ g = {}; // all global variables (ex. settings)
   "./models/reservdelar",
   "./models/semester",
   "./models/skador",
+  "./dummyGenerator",
   "./settingsConstr",
   "./classLoader"
 ].forEach(function(x){
