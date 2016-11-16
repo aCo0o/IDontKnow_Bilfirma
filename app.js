@@ -19,13 +19,22 @@ app.get('/', function (req, res) {
 
 // Bilar
 app.get('/bilar', bil.visabilar);
-/*app.get('/bilar/:id', bil.hittabilmedID);
+app.get('/bilar/:id', bil.hittabilmedID);
 app.put('/bilar/:id', bil.uppdaterabil);
 app.post('bilar', bil.laggtillbil);
-app.delete('/bilar/:id', bil.tabortbil);*/
+app.delete('/bilar/:id', bil.tabortbil);
 
 // Kunder
 app.get('/kunder', kund.visakunder);
+
+app.get('/kunder', kund.visakunder);
+app.get('/kunder/:namn', kund.hittaKundMedNamn);
+
+app.post('/kunder', kund.laggTillKund);
+app.put('/kunder', kund.uppdateraKund);
+app.delete('/kunder', kund.taBortKund);
+
+
 
 // Anställda
 app.get('/anstallda', anstalld.visaanstallda);
