@@ -1,49 +1,50 @@
-var express = require('express');
-var app = express();
-var log = console.log;
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var bil = require('./controllers/bil.js');
-var kund = require('./controllers/kund.js');
-var anstalld = require('./controllers/anstalld.js');
-var reservdel = require ('./controllers/reservdel.js');
-var skada = require('./controllers/skada.js');
-var port = 3000;
+// globals
+m = {}; // all modules
+g = {}; // all global variables (ex. settings)
 
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
-
-app.get('/', function (req, res) {
-    res.send('Hej Gruppen!!!!!!');
+// Require modules
+[
+  "express",
+  "express-session",
+  "compression",
+  "path",
+  "fs",
+  "serve-favicon",
+  "cookie-parser",
+  "body-parser",
+  "gulp",
+  "gulp-less",
+  "gulp-clean-css",
+  "mongoose",
+  "mysql",
+  "./models/anstallda",
+  "./models/bilar",
+  "./models/kunder",
+  "./models/reservdelar",
+  "./models/semester",
+  "./models/skador",
+  "./settingsConstr",
+  "./classLoader"
+].forEach(function(x){
+  // store required modules in "m"
+  m[x.replace(/\W/g,'')] = require(x);
 });
 
-// Bilar
-app.get('/bilar', bil.visabilar);
-app.get('/bilar/:id', bil.hittabilmedID);
-app.put('/bilar/:id', bil.uppdaterabil);
-app.post('bilar', bil.laggtillbil);
-app.delete('/bilar/:id', bil.tabortbil);
+console.log("All loaded modules", Object.keys(m));
 
-// Kunder
-app.get('/kunder', kund.visakunder);
+// constructs g.settings object
+m.settingsConstr();
 
-// Anställda
-app.get('/anstallda', anstalld.visaanstallda);
+// loads all classes
+m.classLoader();
 
-// Skador
-app.get('/skador', skada.visaskador);
-app.get('/skador/:id', skada.hittaskadamedID);
-app.put('/skador/:id', skada.uppdateraskada);
-app.post('/skador', skada.laggtillskada);
-app.delete('/skador/:id', skada.tabortskada);
+console.log("All loaded classes", Object.keys(g.classes));
 
-// resevdel
-app.get('/reservdelar', reservdel.visareservdelar);
-app.get('/reservdelar/:id', reservdel.hittareservdelmedID);
-app.put('/reservdelar/:id', reservdel.uppdaterareservdel);
-app.post('/reservdelar', reservdel.laggtillreservdel);
-app.delete('/reservdelar/:id', reservdel.tabortreservdel);
+// connect to DB
+new g.classes.DB();
 
-app.listen(port, function() {
-console.log("Server startad på port : " + port);
-});
+// start LessWatch
+new g.classes.LessWatch();
+
+// start express server
+new g.classes.Server();
