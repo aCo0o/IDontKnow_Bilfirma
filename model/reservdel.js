@@ -6,4 +6,4 @@ var reservdelSchema = new mongoose.Schema({
     bil : [{type: mongoose.Schema.Types.ObjectId, ref:'bil'}]
   });
 
-module.exports = mongoose.Schema('Reservdel', reservdelSchema);
+module.exports = mongoose.Schema('reservdelar', reservdelSchema);

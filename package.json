@@ -4,8 +4,17 @@
   "description": "SUW 15 -IDontKnow- Grupparbete",
   "main": "app.js",
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "mongoose": "^4.6.8"
+    "body-parser": "*",
+    "cookie-parser": "*",
+    "debug": "*",
+    "express": "*",
+    "express-session": "*",
+    "serve-favicon": "*",
+    "compression": "*",
+    "gulp": "*",
+    "gulp-less": "*",
+    "gulp-clean-css": "*",
+    "mongoose": "*",
+    "mysql": "*"
   }
 }

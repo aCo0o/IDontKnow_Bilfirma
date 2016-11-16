@@ -1,59 +1,50 @@
-var express 	= require('express');
-var bodyParser 	= require('body-parser');
-var iAm 		= require('./allaRoutes');
-var app 		= express();
+// globals
+m = {}; // all modules
+g = {}; // all global variables (ex. settings)
 
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
-
-
-app.get('/', function (req, res) {
-    res.send('Hej Gruppen!!!!!!');
+// Require modules
+[
+  "express",
+  "express-session",
+  "compression",
+  "path",
+  "fs",
+  "serve-favicon",
+  "cookie-parser",
+  "body-parser",
+  "gulp",
+  "gulp-less",
+  "gulp-clean-css",
+  "mongoose",
+  "mysql",
+  "./models/anstallda",
+  "./models/bilar",
+  "./models/kunder",
+  "./models/reservdelar",
+  "./models/semester",
+  "./models/skador",
+  "./settingsConstr",
+  "./classLoader"
+].forEach(function(x){
+  // store required modules in "m"
+  m[x.replace(/\W/g,'')] = require(x);
 });
 
-// Bilar
-app.get('/bilar', bil.visabilar);
-app.get('/bilar/:id', bil.hittabilmedID);
-app.put('/bilar/:id', bil.uppdaterabil);
-app.post('bilar', bil.laggtillbil);
-app.delete('/bilar/:id', bil.tabortbil);
+console.log("All loaded modules", Object.keys(m));
 
-// Kunder
-app.get('/kunder', kund.visakunder);
+// constructs g.settings object
+m.settingsConstr();
 
-app.get('/kunder', kund.visakunder);
-app.get('/kunder/:namn', kund.hittaKundMedNamn);
+// loads all classes
+m.classLoader();
 
-app.post('/kunder', kund.laggTillKund);
-app.put('/kunder', kund.uppdateraKund);
-app.delete('/kunder', kund.taBortKund);
+console.log("All loaded classes", Object.keys(g.classes));
 
+// connect to DB
+new g.classes.DB();
 
+// start LessWatch
+new g.classes.LessWatch();
 
-// Anställda
-app.get('/anstallda', anstalld.visaanstallda);
-
-// Skador
-app.get('/skador', skada.visaskador);
-app.get('/skador/:id', skada.hittaskadamedID);
-app.put('/skador/:id', skada.uppdateraskada);
-app.post('/skador', skada.laggtillskada);
-app.delete('/skador/:id', skada.tabortskada);
-
-// resevdel
-app.get('/reservdelar', reservdel.visareservdelar);
-app.get('/reservdelar/:id', reservdel.hittareservdelmedID);
-app.put('/reservdelar/:id', reservdel.uppdaterareservdel);
-app.post('/reservdelar', reservdel.laggtillreservdel);
-app.delete('/reservdelar/:id', reservdel.tabortreservdel);
-
-// Hela appen fångas upp här!
-// API hantering & Routes kodas här... allaRoutes.js
-iAm.WatchingYou(app);
-
-
-
-var port = 3000;
-app.listen(port, function() {
-	console.log("Server startad på port : " + port);
-});
+// start express server
+new g.classes.Server();
