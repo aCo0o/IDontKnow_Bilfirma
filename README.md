@@ -13,11 +13,11 @@ Hamza Mahmoud - Kunder
 Anders Månsson - Reservdelar
 ## MongoDB Integrerad - MySQL På G
 ```javascript 
-connect.toMongoDB();
+connect.toMongoDB(); - connect.js
 
 ```
 ## Alla Routes går nu igenom 
 ```javascript 
-alla.Routes(app);
+alla.Routes(app); - allaRoutes.js
 
 ```
