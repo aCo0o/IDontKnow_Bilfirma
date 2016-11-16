@@ -13,17 +13,6 @@ Marko Bjelic - Reservdelar
 Aleksandar Cincarevic - Anställda
 
 
-
-
-
-
-
-
-## MongoDB Integrerad - MySQL På G
-```javascript 
-connect.toMongoDB(); - connect.js
-
-```
 ## Alla Routes går nu igenom 
 ```javascript 
 alla.Routes(app); - allaRoutes.js
