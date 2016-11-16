@@ -16,7 +16,7 @@ module.exports = class REST {
     this.app.all(this.settings.route, function(req, res) {
       if(req.params.model == "ny"){
         m.dummyGenerator();
-        res.end();
+        res.json({"OK": "Ett objekt har blivit skapad och skickat till databas"});
       }
       else{
 
