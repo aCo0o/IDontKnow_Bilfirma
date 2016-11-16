@@ -2,15 +2,23 @@
 SUW15 - Gruppuppgift 2016
 
 #Medlemmar: 
-Aleksandar Cincarevic
-
-Sara Baqer - Skador
-
 Sumeja Cerkezi - Bilar
 
 Hamza Mahmoud - Kunder
 
-Anders Månsson - Reservdelar
+Sara Baqer - Skador
+
+Marko Bjelic - Reservdelar
+
+Aleksandar Cincarevic - Anställda
+
+
+
+
+
+
+
+
 ## MongoDB Integrerad - MySQL På G
 ```javascript 
 connect.toMongoDB(); - connect.js
