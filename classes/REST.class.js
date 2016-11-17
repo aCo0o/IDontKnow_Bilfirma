@@ -32,8 +32,8 @@ module.exports = class REST {
         // any data sent in the request URL
         var params = req.body || {};
         params.model = req.params.model;
-        if (req.params.modelID) {
-          params.modelID = req.params.modelID;
+        if (req.params.modelid) {
+          params.modelID = req.params.modelid;
         }
 
         me[req.method](model, params, req, res);
