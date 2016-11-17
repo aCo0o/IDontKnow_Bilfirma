@@ -13,9 +13,10 @@ Marko Bjelic - Reservdelar
 Aleksandar Cincarevic - Anställda
 
 
-## Alla Routes går nu REST Klassen
-```javascript 
- /bilar
- /bilar/:id
+## Alla Routes går nu igenom REST Klassen
+#### t.ex.
+```html 
+ rest/bilar
+ rest/bilar/:id
 
 ```
