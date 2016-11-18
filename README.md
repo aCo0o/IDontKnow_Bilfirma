@@ -13,8 +13,10 @@ Marko Bjelic - Reservdelar
 Aleksandar Cincarevic - Anställda
 
 
-## Alla Routes går nu igenom 
-```javascript 
-iAm.WatchingYou(app); - allaRoutes.js
+## Alla Routes går nu igenom REST Klassen
+#### t.ex.
+```html 
+ rest/bilar
+ rest/bilar/:id
 
 ```
