@@ -32,8 +32,8 @@ module.exports = class REST {
         // any data sent in the request URL
         var params = req.body || {};
         params.model = req.params.model;
-        if (req.params.modelID) {
-          params.modelID = req.params.modelID;
+        if (req.params.modelid) {
+          params.modelID = req.params.modelid;
         }
 
         me[req.method](model, params, req, res);
@@ -63,8 +63,11 @@ module.exports = class REST {
     // call the query function (find || findById)
     model[func](q, function(err, result) {
       if (err) { me.error(err, res); return; }
-      res.json(result); // respond with result
-    });
+      // respond with result
+    }).populate("kund").populate("skada").populate("harArbetat").populate("semester").exec(function(err,results){
+      if(err){console.log(err)}
+        res.json(results)
+    })
   }
 
   // UPDATE
