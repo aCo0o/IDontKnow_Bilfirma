@@ -9,7 +9,8 @@ module.exports = function() {
         'DB',
         'REST',
         'Server',
-        'LessWatch'
+        'LessWatch',
+        'sql'
       ]
     },
     Server: {
