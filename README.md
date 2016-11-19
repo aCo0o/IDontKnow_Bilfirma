@@ -13,10 +13,20 @@ Marko Bjelic - Reservdelar
 Aleksandar Cincarevic - Anställda
 
 
-## Alla Routes går nu igenom REST Klassen
+## Backlog - Trello
+https://trello.com/b/6P9xeC7X/i-dont-know
+
+## Alla Routes går nu igenom REST Klassenerna
 #### t.ex.
 ```html 
  rest/bilar
- rest/bilar/:id
+ rest/skador/:id
 
 ```
+
+## dummyGenerator
+Skicka en POST mot  
+```html 
+ rest/ny
+```
+för att ladda dummydata:
