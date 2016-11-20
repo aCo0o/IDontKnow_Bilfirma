@@ -36,7 +36,7 @@ module.exports = function() {
       modelDir: m.path.join(appRoot,'models/')
     },
     REST: {
-      route: '/rest/:model/:modelid?'
+      route: '/:databas/:model/:modelid?'
     }
   };
 };
