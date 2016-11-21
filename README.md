@@ -17,16 +17,17 @@ Aleksandar Cincarevic - Anställda
 https://trello.com/b/6P9xeC7X/i-dont-know
 
 ## Alla Routes går nu igenom REST Klassenerna
-#### t.ex.
+#### t.ex.MongoDB
 ```html 
- rest/bilar
- rest/skador/:id
+ mongo/bilar
+ mongo/skador/:id
 
 ```
 
-## dummyGenerator
-Skicka en POST mot  
+#### t.ex.MySQL
 ```html 
- rest/ny
+ SQL/bilar
+ SQL/skador/:id
+
 ```
-för att ladda dummydata:
+
