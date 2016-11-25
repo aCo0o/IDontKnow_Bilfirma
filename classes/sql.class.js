@@ -23,7 +23,8 @@ module.exports = class DbConnection {
 
 		this.connection.connect(function(err) {
 		    if (err){ 
-				throw err; 
+				//throw err; 
+			    	console.log("Kunde inte ansluta till MySQL");
 			}
 			else{
 				console.log("Ansuten till Sql DB");
